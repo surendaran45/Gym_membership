@@ -1,0 +1,15 @@
+CREATE TABLE members(
+    member_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    phone VARCHAR(20),
+    start_date DATE,
+    end_date DATE
+);
+
+CREATE TABLE payments(
+    pay_id INT PRIMARY KEY,
+    member_id INT,
+    amount INT,
+    pay_date DATE,
+    FOREIGN KEY (member_id) REFERENCES members(member_id)
+);
